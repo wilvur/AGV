@@ -23,6 +23,7 @@ window.addEventListener('DOMContentLoaded', () => {
         cargaCategorias(resultado);
     } )
     cargarBusquedas();
+    
 }
 );
 
@@ -112,11 +113,11 @@ function cargarBusqueda(id) {
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
                         </svg>
                     Compartir  
-                    <div class="bg-white absolute flex justify-between rounded-lg shadow-lg top-6 right-0 py-5"> 
-                        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://www.agv-recursoshumanos.com.ar/" target="_blank"> <img src="./img/linkedin.png" class="w-8 mx-3" alt="Compartir en Whatsaap"> </a>
-                        ${isMobile() ? '<a href="whatsapp://send?text=http://www.agv-recursoshumanos.com.ar/" data-action="share/whatsapp/share" target="_blank"> <img src="./img/whatsapp.png" class="w-8 mx-3" alt="Compartir en Linkedin"></a>' : "" } 
-                        <a href="https://www.facebook.com/sharer/sharer.php?u=http://www.agv-recursoshumanos.com.ar/"       target="_blank">        <img src="./img/facebook.png" class="w-8 mx-3" alt="Compartir en Facebook"> </a>
-                     </div> 
+                    <div class="bg-white absolute flex justify-between rounded-lg shadow-lg top-6 right-0 w-40 h-16 p-4">
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=http://www.agv-recursoshumanos.com.ar/" target="_blank"> <img src="./img/facebook.png" class="w-8 "alt=""> </a>
+                        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://www.agv-recursoshumanos.com.ar/" target="_blank"> <img src="./img/linkedin.png" class="w-8 "alt=""> </a>
+                        ${isMobile() ? '<a href="whatsapp://send?text=http://www.agv-recursoshumanos.com.ar/" data-action="share/whatsapp/share" target="_blank"> <img src="./img/whatsapp.png" class="w-8 " alt=""></a>' : "" } 
+                    </div> 
                 </div>
             </div>
             </article>
@@ -179,9 +180,8 @@ function calculoDias(fecha) {
     const date1 = new Date(fecha);
     const date2 = Date.now();
     const diffDays = parseInt((date2 - date1) / (1000 * 60 * 60 * 24), 10); 
+
     if ( diffDays < 10) {
-        return 'Hoy'
-    } else if ( diffDays < 10) {
         return "Hace " +  diffDays + " Dias";
     } else {       
         // const dateCalculada = date1.addDays(1); 
